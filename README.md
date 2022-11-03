@@ -1,13 +1,3 @@
-**Read in other languages: [Русский](README.md), [Polska](README.pl.md),
-[English](README.en.md), [Spanish](README.es.md).**
-
-# React homework template
-
-Этот проект был создан при помощи
-[Create React App](https://github.com/facebook/create-react-app). Для знакомства
-и настройки дополнительных возможностей
-[обратись к документации](https://facebook.github.io/create-react-app/docs/getting-started).
-
 ## Подготовка нового проекта
 
 1. Убедись что на компьютере установлена LTS-версия Node.js.
