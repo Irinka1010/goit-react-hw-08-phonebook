@@ -1,5 +1,7 @@
 import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import PrivateRoute from 'components/PrivateRoute/PrivateRoute';
+import PublicRoute from 'components/PublicRoute/PublicRoute';
 
 const RegisterPege = lazy(() => import('pages/RegisterPege/RegisterPege'));
 const MyPhonebook = lazy(() => import('pages/MyPhonebook/MyPhonebook'));
@@ -9,9 +11,13 @@ const UserRoutes = () => {
   return (
     <Suspense fallback={<p>...Load page</p>}>
       <Routes>
-        <Route path="/register" element={<RegisterPege />} />
-        <Route path="/login" element={<LoginPege />} />
-        <Route path="/contacts" element={<MyPhonebook />} />
+        <Route element={<PublicRoute />}>
+          <Route path="/register" element={<RegisterPege />} />
+          <Route path="/login" element={<LoginPege />} />
+        </Route>
+        <Route element={<PrivateRoute />}>
+          <Route path="/contacts" element={<MyPhonebook />} />
+        </Route>
       </Routes>
     </Suspense>
   );
