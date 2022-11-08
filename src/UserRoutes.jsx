@@ -1,5 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import LinearIndeterminate from 'components/LinearIndeterminate/LinearIndeterminate';
 import PrivateRoute from 'components/PrivateRoute/PrivateRoute';
 import PublicRoute from 'components/PublicRoute/PublicRoute';
 
@@ -9,7 +10,7 @@ const LoginPege = lazy(() => import('pages/LoginPege/LoginPege'));
 const NotFoundPage = lazy(() => import('pages/NotFoundPage/NotFoundPage'));
 const UserRoutes = () => {
   return (
-    <Suspense fallback={<p>...Load page</p>}>
+    <Suspense fallback={<LinearIndeterminate />}>
       <Routes>
         <Route element={<PublicRoute />}>
           <Route path="/register" element={<RegisterPege />} />
