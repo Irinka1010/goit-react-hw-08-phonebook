@@ -5,6 +5,7 @@ import { getUser } from 'redux/auth/authSelectors';
 export default function UserMenu() {
   const dispatch = useDispatch();
   const { name } = useSelector(getUser);
+  console.log(name);
 
   const onLogout = () => {
     dispatch(logout());
