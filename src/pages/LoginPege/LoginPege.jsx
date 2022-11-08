@@ -14,6 +14,7 @@ export default function LoginPege() {
     <div>
       <h1>LoginPege</h1>
       <LoginForm onSubmit={onLogin} />
+      {/* {status & <p>yfhgfhufh</p>} */}
     </div>
   );
 }

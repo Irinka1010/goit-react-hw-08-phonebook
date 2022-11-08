@@ -3,14 +3,19 @@ import ContactsList from 'components/ContactsList/ContactsList';
 import Filter from 'components/Filter/Filter';
 import css from 'components/Phonebook/Phonebook.module.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { getFilteredContacts, getFilter, getState } from 'redux/selectors';
+
+import {
+  getFilteredContacts,
+  getFilter,
+  getState,
+} from 'redux/Contacts/selectors';
 
 import {
   fetchContacts,
   addContact,
   removeContact,
-} from 'redux/contactsOperation';
-import { setFilter } from 'redux/filterSlice';
+} from 'redux/Contacts/contactsOperation';
+import { setFilter } from 'redux/Contacts/filterSlice';
 import { useEffect } from 'react';
 
 export default function Phonebook() {

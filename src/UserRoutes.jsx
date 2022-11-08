@@ -6,7 +6,7 @@ import PublicRoute from 'components/PublicRoute/PublicRoute';
 const RegisterPege = lazy(() => import('pages/RegisterPege/RegisterPege'));
 const MyPhonebook = lazy(() => import('pages/MyPhonebook/MyPhonebook'));
 const LoginPege = lazy(() => import('pages/LoginPege/LoginPege'));
-
+const NotFoundPage = lazy(() => import('pages/NotFoundPage/NotFoundPage'));
 const UserRoutes = () => {
   return (
     <Suspense fallback={<p>...Load page</p>}>
@@ -18,6 +18,7 @@ const UserRoutes = () => {
         <Route element={<PrivateRoute />}>
           <Route path="/contacts" element={<MyPhonebook />} />
         </Route>
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Suspense>
   );

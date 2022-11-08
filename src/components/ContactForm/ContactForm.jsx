@@ -1,6 +1,7 @@
 import { nanoid } from 'nanoid';
 import css from 'components/ContactForm/ContactForm.module.css';
-import { useState } from 'react';
+import { useMemo } from 'react';
+import useForm from 'shared/hooks/useForm';
 
 const initialState = {
   name: '',
@@ -8,30 +9,17 @@ const initialState = {
 };
 
 export default function ContactForm({ onSubmit }) {
-  const [state, setState] = useState({ initialState });
-  const nameId = nanoid();
-  const numberId = nanoid();
+  const { state, handleChange, handleSubmit } = useForm({
+    initialState,
+    onSubmit,
+  });
 
-  const handleChange = ev => {
-    const { name, value } = ev.target;
-    setState(prev => {
-      return {
-        ...prev,
-        [name]: value,
-      };
-    });
-  };
-
-  const handelSubmit = ev => {
-    ev.preventDefault();
-    const { name, number } = state;
-    onSubmit({ name, number });
-    setState(initialState);
-  };
+  const nameId = useMemo(() => nanoid(), []);
+  const numberId = useMemo(() => nanoid(), []);
 
   const { name, number } = state;
   return (
-    <form onSubmit={handelSubmit}>
+    <form onSubmit={handleSubmit}>
       <label htmlFor={nameId}>Name</label>
       <input
         id={nameId}

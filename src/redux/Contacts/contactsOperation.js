@@ -1,4 +1,4 @@
-import * as api from './api';
+import * as api from '../../shared/api/contact';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 const isDuplicate = ({ name, number }, contacts) => {
   const normalizedName = name.toLowerCase();
