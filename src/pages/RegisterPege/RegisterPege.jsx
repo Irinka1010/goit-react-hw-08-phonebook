@@ -1,6 +1,6 @@
 import RegisterForm from 'components/RegisterForm/RegisterForm';
 import { useDispatch } from 'react-redux';
-import { signup } from 'redux/Auth/authOperetion';
+import { signup } from 'redux/auth/authOperetion';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 export const commonStyles = {

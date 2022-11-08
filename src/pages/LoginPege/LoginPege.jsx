@@ -2,7 +2,7 @@ import LoginForm from 'components/LoginForm/LoginForm';
 import { useDispatch } from 'react-redux';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
-import { login } from 'redux/Auth/authOperetion';
+import { login } from 'redux/auth/authOperetion';
 
 export const commonStyles = {
   boxShadow: 3,
