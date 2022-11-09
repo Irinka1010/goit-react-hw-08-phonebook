@@ -4,7 +4,6 @@ const items = [
   {
     id: nanoid(),
     to: '/contacts',
-    text: 'My Phonebook',
   },
 ];
 
