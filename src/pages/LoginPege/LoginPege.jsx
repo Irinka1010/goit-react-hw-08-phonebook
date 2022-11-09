@@ -9,7 +9,7 @@ export const commonStyles = {
   bgcolor: theme => (theme.palette.mode === 'dark' ? '#101010' : '#fff'),
   color: theme => (theme.palette.mode === 'dark' ? 'grey.300' : 'grey.800'),
   mx: 'auto',
-  my: 0.5,
+  my: 5,
   p: 5,
   border: 1,
   width: '20rem',
