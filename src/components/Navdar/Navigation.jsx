@@ -14,7 +14,7 @@ export default function Navigation() {
       <Toolbar>
         <Typography variant="h6" component="samp" sx={{ flexGrow: 1 }}>
           <Link to="/">
-            My Phones
+            Phonebook
             <IconButton color="inherit">
               <Phone />
             </IconButton>

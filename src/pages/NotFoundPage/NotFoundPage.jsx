@@ -4,8 +4,13 @@ import Container from '@mui/material/Container';
 export default function NotFoundPage() {
   return (
     <Container sx={{ mt: '1rem' }}>
-      <h1>Page not found</h1>
-      <Link to="/">To home page</Link>
+      <div>
+        <img
+          alt="phonebook.jpg"
+          src="https://cdn.dribbble.com/users/892648/screenshots/6795161/phonebook.jpg"
+        />
+      </div>
+      <Link to="/"></Link>
     </Container>
   );
 }

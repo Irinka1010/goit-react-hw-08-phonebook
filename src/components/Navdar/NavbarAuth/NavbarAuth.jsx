@@ -7,7 +7,7 @@ export default function NavbarAuth() {
         Register
       </NavLink>
       <NavLink className={css.StyledLink} to="/login">
-        Login
+        Log in
       </NavLink>
     </div>
   );
