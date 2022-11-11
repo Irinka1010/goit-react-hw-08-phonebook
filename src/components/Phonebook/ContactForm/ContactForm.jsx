@@ -1,7 +1,13 @@
 import { nanoid } from 'nanoid';
-import css from 'components/ContactForm/ContactForm.module.css';
+
 import { useMemo } from 'react';
 import useForm from 'shared/hooks/useForm';
+import { Input } from './ContactForm.styled';
+
+import Button from '@mui/material/Button';
+
+import AccountCircle from '@mui/icons-material/AccountCircle';
+import Stack from '@mui/material/Stack';
 
 const initialState = {
   name: '',
@@ -20,8 +26,8 @@ export default function ContactForm({ onSubmit }) {
   const { name, number } = state;
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor={nameId}>Name</label>
-      <input
+      <AccountCircle sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+      <Input
         id={nameId}
         type="text"
         name="name"
@@ -32,8 +38,7 @@ export default function ContactForm({ onSubmit }) {
         value={name}
         onChange={handleChange}
       />
-      <label htmlFor={numberId}>Number</label>
-      <input
+      <Input
         id={numberId}
         type="tel"
         name="number"
@@ -44,10 +49,15 @@ export default function ContactForm({ onSubmit }) {
         value={number}
         onChange={handleChange}
       />
-
-      <button className={css.button} type="submit">
-        Add contact
-      </button>
+      <Stack direction="row" spacing={2}>
+        <Button
+          variant="contained"
+          sx={{ backgroundColor: '#778089' }}
+          type="submit"
+        >
+          Add contact
+        </Button>
+      </Stack>
     </form>
   );
 }

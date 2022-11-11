@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import * as api from 'shared/api/auth';
+import Notiflix from 'notiflix';
 export const signup = createAsyncThunk(
   'auth/signup',
   async (data, { rejectWithValue }) => {
@@ -7,6 +8,7 @@ export const signup = createAsyncThunk(
       const result = await api.signup(data);
       return result;
     } catch ({ response }) {
+      Notiflix.Notify.failure('invalid data format');
       const error = {
         status: response.status,
         messange: response.data.messange,
@@ -22,6 +24,7 @@ export const login = createAsyncThunk(
       const result = await api.login(data);
       return result;
     } catch ({ response }) {
+      Notiflix.Notify.failure('invalid data format');
       const error = {
         status: response.status,
         messange: response.data.messange,

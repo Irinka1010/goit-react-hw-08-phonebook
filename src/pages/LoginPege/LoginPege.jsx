@@ -6,8 +6,7 @@ import { login } from 'redux/auth/authOperetion';
 
 export const commonStyles = {
   boxShadow: 3,
-  bgcolor: theme => (theme.palette.mode === 'dark' ? '#101010' : '#fff'),
-  color: theme => (theme.palette.mode === 'dark' ? 'grey.300' : 'grey.800'),
+
   mx: 'auto',
   my: 5,
   p: 5,

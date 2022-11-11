@@ -1,5 +1,6 @@
 import * as api from '../../shared/api/contact';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import Notiflix from 'notiflix';
 const isDuplicate = ({ name, number }, contacts) => {
   const normalizedName = name.toLowerCase();
   const normalizedPhone = number.toLowerCase();
@@ -41,8 +42,9 @@ export const addContact = createAsyncThunk(
       const { contacts } = getState();
 
       if (isDuplicate(data, contacts.items)) {
-        alert(`${data.name}: ${data.number} is already exist`);
-        return false;
+        const massege = Notiflix.Notify
+          .info`${data.name}: ${data.number} is already exist`;
+        return massege;
       }
     },
   }

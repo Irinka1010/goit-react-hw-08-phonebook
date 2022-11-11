@@ -1,7 +1,9 @@
-import ContactForm from 'components/ContactForm/ContactForm';
-import ContactsList from 'components/ContactsList/ContactsList';
-import Filter from 'components/Filter/Filter';
-import css from 'components/Phonebook/Phonebook.module.css';
+import ContactForm from 'components/Phonebook/ContactForm/ContactForm';
+import ContactsList from 'components/Phonebook/ContactsList/ContactsList';
+import Filter from 'components/Phonebook/Filter/Filter';
+import Typography from '@mui/material/Typography';
+
+import Grid from '@mui/material/Grid';
 import { useSelector, useDispatch } from 'react-redux';
 
 import {
@@ -42,20 +44,50 @@ export default function Phonebook() {
   };
 
   return (
-    <>
-      <div className={css.formContact}>
-        <h2 className={css.title}>Phonebook</h2>
+    <Grid
+      container
+      spacing={2}
+      sx={{
+        p: '60px',
+        mt: '20px',
+        borderColor: 'primary.main',
+        borderRadius: '16px',
+        bgcolor: 'info.main',
+      }}
+    >
+      <Grid item xs>
+        <Typography
+          variant="h4"
+          component="h2"
+          sx={{ mb: '40px', fontWeight: 400 }}
+        >
+          Phonebook
+        </Typography>
         <ContactForm onSubmit={onAddContact} />
-      </div>
-      <div className={css.contacts}>
-        <h2 className={css.title}>Contacts</h2>
+      </Grid>
+      <Grid item xs={4}>
+        <Typography
+          variant="h4"
+          component="h2"
+          sx={{ mb: '40px', fontWeight: 400 }}
+        >
+          Contacts
+        </Typography>
+
         <Filter onChange={hendelChenge} value={filter} />
+        <Typography
+          variant="h5"
+          component="h3"
+          sx={{ mb: '10px', fontWeight: 400 }}
+        >
+          Phone book project:
+        </Typography>
         {contacts.length > 0 && (
           <ContactsList items={contacts} removeContact={onRemoveContact} />
         )}
         {loading && <p>...loading</p>}
         {error && <p>oops, something went wrong</p>}
-      </div>
-    </>
+      </Grid>
+    </Grid>
   );
 }
