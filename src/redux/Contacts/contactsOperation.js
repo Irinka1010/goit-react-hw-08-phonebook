@@ -42,8 +42,10 @@ export const addContact = createAsyncThunk(
       const { contacts } = getState();
 
       if (isDuplicate(data, contacts.items)) {
-        Notiflix.Notify.info`${data.name}: ${data.number} is already exist`;
-        return false;
+        const massege = Notiflix.Notify.info(
+          `${data.name}: ${data.number} is already exist`
+        );
+        return massege(data);
       }
     },
   }
