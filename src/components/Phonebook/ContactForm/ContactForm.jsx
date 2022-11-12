@@ -5,9 +5,8 @@ import useForm from 'shared/hooks/useForm';
 import { Input } from './ContactForm.styled';
 
 import Button from '@mui/material/Button';
-
+import Box from '@mui/material/Box';
 import AccountCircle from '@mui/icons-material/AccountCircle';
-import Stack from '@mui/material/Stack';
 
 const initialState = {
   name: '',
@@ -25,7 +24,15 @@ export default function ContactForm({ onSubmit }) {
 
   const { name, number } = state;
   return (
-    <form onSubmit={handleSubmit}>
+    <Box
+      component="form"
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        flexDirection: 'column',
+      }}
+      onSubmit={handleSubmit}
+    >
       <AccountCircle sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
       <Input
         id={nameId}
@@ -49,15 +56,14 @@ export default function ContactForm({ onSubmit }) {
         value={number}
         onChange={handleChange}
       />
-      <Stack direction="row" spacing={2}>
-        <Button
-          variant="contained"
-          sx={{ backgroundColor: '#778089' }}
-          type="submit"
-        >
-          Add contact
-        </Button>
-      </Stack>
-    </form>
+
+      <Button
+        variant="contained"
+        sx={{ backgroundColor: '#778089' }}
+        type="submit"
+      >
+        Add contact
+      </Button>
+    </Box>
   );
 }

@@ -2,8 +2,8 @@ import ContactForm from 'components/Phonebook/ContactForm/ContactForm';
 import ContactsList from 'components/Phonebook/ContactsList/ContactsList';
 import Filter from 'components/Phonebook/Filter/Filter';
 import Typography from '@mui/material/Typography';
-
-import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+// import Grid from '@mui/material/Grid';
 import { useSelector, useDispatch } from 'react-redux';
 
 import {
@@ -44,32 +44,36 @@ export default function Phonebook() {
   };
 
   return (
-    <Grid
-      container
-      spacing={2}
+    <Box
+      component="div"
       sx={{
         p: '60px',
         mt: '20px',
         borderColor: 'primary.main',
         borderRadius: '16px',
         bgcolor: 'info.main',
+        display: 'flex',
+        justifyContent: 'space-between',
       }}
     >
-      <Grid item xs>
+      <Box component="div" sx={{ width: '39%' }}>
         <Typography
           variant="h4"
           component="h2"
-          sx={{ mb: '40px', fontWeight: 400 }}
+          sx={{ fontWeight: 400, mb: '20px', textAlign: 'center' }}
         >
           Phonebook
         </Typography>
         <ContactForm onSubmit={onAddContact} />
-      </Grid>
-      <Grid item xs={4}>
+      </Box>
+      <Box
+        component="div"
+        sx={{ boxShadow: 3, width: '58%', borderRadius: '16px', p: '10px' }}
+      >
         <Typography
           variant="h4"
           component="h2"
-          sx={{ mb: '40px', fontWeight: 400 }}
+          sx={{ fontWeight: 400, mb: '20px', textAlign: 'center' }}
         >
           Contacts
         </Typography>
@@ -87,7 +91,7 @@ export default function Phonebook() {
         )}
         {loading && <p>...loading</p>}
         {error && <p>oops, something went wrong</p>}
-      </Grid>
-    </Grid>
+      </Box>
+    </Box>
   );
 }
