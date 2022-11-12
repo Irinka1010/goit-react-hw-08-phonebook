@@ -14,12 +14,12 @@ export default function UserMenu() {
   };
   return (
     <Stack spacing={2} direction="row">
+      <Typography variant="h6" component="p">
+        {`${email}`}
+      </Typography>
       <Button variant="contained" color="info" type="button" onClick={onLogout}>
         Logout
       </Button>
-      <Typography variant="h6" component="p">
-        {`${email}`}{' '}
-      </Typography>
     </Stack>
   );
 }

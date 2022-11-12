@@ -1,13 +1,13 @@
 import { NavLink } from 'react-router-dom';
 import Stack from '@mui/material/Stack';
-import Avatar from '@mui/material/Avatar';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 import items from './items';
 export default function NavbarMenu() {
-  const elements = items.map(({ id, to, text }) => (
-    <Stack sx={{ ml: '5rem' }} key={id}>
+  const elements = items.map(({ id, to }) => (
+    <Stack sx={{ mr: '1rem' }} key={id}>
       <NavLink to={to}>
-        <Avatar src="/broken-image.jpg" />
+        <AccountCircleIcon />
       </NavLink>
     </Stack>
   ));

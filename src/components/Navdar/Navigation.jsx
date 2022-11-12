@@ -20,9 +20,8 @@ export default function Navigation() {
             </IconButton>
           </Link>
         </Typography>
-
-        {isLogin ? <UserMenu /> : <NavbarAuth />}
         {isLogin && <NavbarMenu />}
+        {isLogin ? <UserMenu /> : <NavbarAuth />}
       </Toolbar>
     </AppBar>
   );
