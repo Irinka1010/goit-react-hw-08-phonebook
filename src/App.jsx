@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { current } from 'redux/auth/authOperetion';
 import Navigation from 'components/Navdar/Navigation';
 import { getLoadingUserStatus } from 'redux/auth/authSelectors';
-
+import LinearIndeterminate from 'components/LinearIndeterminate/LinearIndeterminate';
 import UserRoutes from 'UserRoutes';
 
 const App = () => {
@@ -15,7 +15,7 @@ const App = () => {
   return (
     <div>
       {isLoadingUser ? (
-        <p>Loading...</p>
+        <LinearIndeterminate />
       ) : (
         <>
           <Navigation />
