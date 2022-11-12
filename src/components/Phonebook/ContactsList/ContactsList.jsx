@@ -12,7 +12,7 @@ export default function ContactsList({ items, removeContact }) {
       <ListItemAvatar
         sx={{
           display: 'flex',
-          alignItems: 'center',
+          alignItems: 'baseline',
           textAlign: 'center',
         }}
         key={id}
