@@ -23,7 +23,7 @@ export default function LoginForm({ onSubmit }) {
   const { email, password } = state;
 
   return (
-    <Box component="form" onSubmit={handleSubmit}>
+    <Box component="form" onSubmit={handleSubmit} sx={{ maxWidth: '270' }}>
       <TextField
         id={emailId}
         name="email"
@@ -31,7 +31,7 @@ export default function LoginForm({ onSubmit }) {
         label="Email"
         value={email}
         required
-        sx={{ mb: '1.5rem', width: '100%' }}
+        sx={{ mb: '1.5rem' }}
         onChange={handleChange}
       />
       <TextField
@@ -41,7 +41,7 @@ export default function LoginForm({ onSubmit }) {
         label="Password"
         value={password}
         required
-        sx={{ mb: '1.5rem', width: '100%' }}
+        sx={{ mb: '1.5rem' }}
         onChange={handleChange}
       />
       <Stack direction="row" spacing={2}>

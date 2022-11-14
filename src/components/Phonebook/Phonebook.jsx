@@ -19,6 +19,7 @@ import {
 } from 'redux/Contacts/contactsOperation';
 import { setFilter } from 'redux/Contacts/filterSlice';
 import { useEffect } from 'react';
+import { grid } from '@mui/system';
 
 export default function Phonebook() {
   const contacts = useSelector(getFilteredContacts);
@@ -45,31 +46,36 @@ export default function Phonebook() {
 
   return (
     <Box
-      component="div"
+      component="section"
       sx={{
-        p: '60px',
-        mt: '20px',
+        maxWidth: '800px',
+        mx: 'auto',
+        minHeight: '100vh',
+        pt: '60px',
         borderColor: 'primary.main',
         borderRadius: '16px',
         bgcolor: 'info.main',
-        display: 'flex',
-        justifyContent: 'space-between',
+        textAlign: 'center',
       }}
     >
-      <Box component="div" sx={{ width: '39%' }}>
+      <Box
+        component="div"
+        sx={{
+          gridGap: '20px',
+          display: grid,
+          gridTemplateColumns: '70px, 1fr',
+        }}
+      >
         <Typography
           variant="h4"
           component="h2"
-          sx={{ fontWeight: 400, mb: '20px', textAlign: 'center' }}
+          sx={{ fontWeight: 400, fontSize: '32px', pt: '16px' }}
         >
           Phonebook
         </Typography>
         <ContactForm onSubmit={onAddContact} />
       </Box>
-      <Box
-        component="div"
-        sx={{ boxShadow: 3, width: '58%', borderRadius: '16px', p: '10px' }}
-      >
+      <Box component="div" sx={{ mx: 'auto', p: '30px' }}>
         <Typography
           variant="h4"
           component="h2"
@@ -79,13 +85,7 @@ export default function Phonebook() {
         </Typography>
 
         <Filter onChange={hendelChenge} value={filter} />
-        <Typography
-          variant="h5"
-          component="h3"
-          sx={{ mb: '10px', fontWeight: 400 }}
-        >
-          Phone book project:
-        </Typography>
+
         {contacts.length > 0 && (
           <ContactsList items={contacts} removeContact={onRemoveContact} />
         )}

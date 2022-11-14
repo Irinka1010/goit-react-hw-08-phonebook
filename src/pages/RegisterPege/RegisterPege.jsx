@@ -11,8 +11,7 @@ export const commonStyles = {
   my: 5,
   p: 5,
   border: 1,
-  width: '20rem',
-  height: '25rem',
+  maxWidth: '280px',
 };
 export default function RegisterPege() {
   const dispatch = useDispatch();
@@ -22,7 +21,7 @@ export default function RegisterPege() {
   };
 
   return (
-    <Container sx={{ mt: '1rem' }}>
+    <Container sx={{ mt: '1rem', maxWidth: '1000px' }}>
       <Box sx={{ ...commonStyles, borderRadius: '16px' }}>
         <RegisterForm onSubmit={onRegister} />
       </Box>

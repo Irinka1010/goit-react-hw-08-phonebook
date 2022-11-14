@@ -4,7 +4,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Imge from '../../imges/picture.png';
 export default function NotFoundPage() {
   return (
-    <Container sx={{ mt: '1rem' }}>
+    <Container sx={{ mt: '1rem', maxWidth: '1000px' }}>
       <CardMedia
         component="img"
         sx={{ height: '100%' }}

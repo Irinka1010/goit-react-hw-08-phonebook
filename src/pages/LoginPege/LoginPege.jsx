@@ -6,13 +6,11 @@ import { login } from 'redux/auth/authOperetion';
 
 export const commonStyles = {
   boxShadow: 3,
-
+  maxWidth: '280px',
   mx: 'auto',
   my: 5,
   p: 5,
   border: 1,
-  width: '20rem',
-  height: '20rem',
 };
 
 export default function LoginPege() {
@@ -23,7 +21,7 @@ export default function LoginPege() {
   };
 
   return (
-    <Container sx={{ mt: '1rem' }}>
+    <Container sx={{ mt: '1rem', maxWidth: '1000px' }}>
       <Box sx={{ ...commonStyles, borderRadius: '16px' }}>
         <LoginForm onSubmit={onLogin} />
       </Box>

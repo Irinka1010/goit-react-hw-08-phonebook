@@ -1,6 +1,5 @@
-import { Phone } from '@mui/icons-material';
-import { AppBar, IconButton, Toolbar, Typography } from '@mui/material';
-import NavbarMenu from './NavbarMenu/NavbarMenu';
+import { AppBar, Toolbar, Typography } from '@mui/material';
+
 import UserMenu from './UserMenu/UserMenu';
 import useAuth from 'shared/hooks/useAuth';
 import NavbarAuth from './NavbarAuth/NavbarAuth';
@@ -12,15 +11,15 @@ export default function Navigation() {
   return (
     <AppBar position="static">
       <Toolbar>
-        <Typography variant="h6" component="samp" sx={{ flexGrow: 1 }}>
-          <Link to="/">
-            Phonebook
-            <IconButton color="inherit">
-              <Phone />
-            </IconButton>
-          </Link>
+        <Typography
+          variant="h6"
+          component="samp"
+          mr={{ xs: '30px' }}
+          sx={{ flexGrow: 1 }}
+        >
+          <Link to="/">Phonebook</Link>
         </Typography>
-        {isLogin && <NavbarMenu />}
+
         {isLogin ? <UserMenu /> : <NavbarAuth />}
       </Toolbar>
     </AppBar>
