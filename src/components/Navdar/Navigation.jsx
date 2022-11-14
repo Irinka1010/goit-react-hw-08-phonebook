@@ -11,12 +11,7 @@ export default function Navigation() {
   return (
     <AppBar position="static">
       <Toolbar>
-        <Typography
-          variant="h6"
-          component="samp"
-          mr={{ xs: '30px' }}
-          sx={{ flexGrow: 1 }}
-        >
+        <Typography variant="h6" component="samp" sx={{ flexGrow: 1 }}>
           <Link to="/">Phonebook</Link>
         </Typography>
 
